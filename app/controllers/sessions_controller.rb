@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:name] = params[:name]
       redirect_to '/welcome'
     end
-  end 
+  end
 
   def welcome
     if logged_in
@@ -20,4 +20,15 @@ class SessionsController < ApplicationController
       redirect_to controller: 'sessions', action: 'new'
     end
   end
+
+  private 
+  def logged_in
+    if !params[:name] || params[:name] == ""
+      return head(:forbidden)
+      redirect_to '/login'
+    else
+    session[:name] = params[:name]
+  end
+  end
+    
 end
