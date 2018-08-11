@@ -3,9 +3,10 @@ class SecretsController < ApplicationController
 
     def show
       if !logged_in
+        return head(:forbidden) unless session.include? :name
         redirect_to '/login'
-
-
+      else
+        
 
       end
 
@@ -16,7 +17,12 @@ class SecretsController < ApplicationController
     private
 
     def logged_in
-    return head(:forbidden) unless session.include? :name
+      if !params[:name] || params[:name] == ""
+        redirect_to '/login'
+      else
+      session[:name] = params[:name]
+      redirect_to welcome page
     end
+  end
 
 end
