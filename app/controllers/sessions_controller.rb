@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def welcome
-    
+    redirect_to controller: 'sessions', action: 'new'
   end
 
   def destroy
