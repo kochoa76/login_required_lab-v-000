@@ -2,3 +2,7 @@
 <%= current_user %> </h2>
 
 <h2>See this link</h2><%= link_to controller: "secrets", action: "show" %>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
