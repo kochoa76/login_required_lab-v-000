@@ -9,7 +9,7 @@ class SecretsController < ApplicationController
     private
 
     def logged_in
-      if !params[:name] || params[:name] == ""
+      if !params[:name] || params[:name].empty? 
         redirect_to controller: 'sessions', action: 'new'
       else
       session[:name] = params[:name]
