@@ -11,7 +11,7 @@ class SecretsController < ApplicationController
 
     def logged_in
 
-      if params[:name].empty?
+      if params[:name]== ""
         redirect_to controller: 'sessions', action: 'new'
       else
       session[:name] = params[:name]
