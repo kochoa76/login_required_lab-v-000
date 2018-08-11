@@ -16,6 +16,8 @@ class SessionsController < ApplicationController
   end
 
   def welcome
+    if logged_in 
+      current_user = params[:name]
     if !logged_in
     redirect_to(controller: 'sessions', action: 'new')
     end
