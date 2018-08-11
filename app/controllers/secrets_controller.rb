@@ -5,16 +5,17 @@ class SecretsController < ApplicationController
       if !logged_in
         redirect_to controller: 'sessions', action: 'new'
       end
+    end 
 
 
 
     private
 
     def logged_in
-
       if params[:name]== "" || params[:name]==nil
         redirect_to controller: 'sessions', action: 'new'
       end
+    end 
     
 
 end
