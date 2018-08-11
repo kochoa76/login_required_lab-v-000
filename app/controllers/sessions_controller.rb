@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
 
-    if params[:name]== ""
+    if params[:name]== "" || params[:name] == nil 
     redirect_to(controller: 'sessions', action: 'new')
     else
       logged_in
