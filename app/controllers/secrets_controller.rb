@@ -18,6 +18,5 @@ class SecretsController < ApplicationController
     def logged_in
     return head(:forbidden) unless session.include? :name
     end
-  end
 
 end
