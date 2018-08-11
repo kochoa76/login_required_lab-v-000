@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def welcome
+    if !logged_in 
     redirect_to controller: 'sessions', action: 'new'
   end
 
