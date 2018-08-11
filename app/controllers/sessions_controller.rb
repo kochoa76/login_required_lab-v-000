@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
   def welcome
     if logged_in
-      current_user = params[:name]
+      current_user 
     else
     redirect_to(controller: 'sessions', action: 'new')
     end
