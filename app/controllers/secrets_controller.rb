@@ -5,10 +5,6 @@ class SecretsController < ApplicationController
       if !logged_in
         return head(:forbidden)
         redirect_to '/login'
-      else
-        redirect_to '/welcome'
-
-
 
       end
 
