@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       return redirect_to(controller: 'sessions', action: 'new')
     else
       session[:name] = params[:name]
-      
+      redirect_to controller: 'secrets' action: 'show'
     end
   end
 
