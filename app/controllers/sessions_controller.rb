@@ -16,9 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def welcome
-    if !logged_in 
-    redirect_to(controller: 'sessions', action: 'new')
-    end
+    redirect_to controller: 'sessions', action: 'new' unless session[:name]
   end
 
   def destroy
