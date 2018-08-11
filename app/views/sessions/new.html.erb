@@ -1,6 +1,6 @@
 <h1> Log in </h1>
 
-<%= form_for ({controller: 'sessions', action: 'create', method: 'post'}) do |f| %>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
   <%= f.text_field :name %> 
   <%= f.submit %>
   <% end %>
