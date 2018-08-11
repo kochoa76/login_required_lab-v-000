@@ -14,21 +14,19 @@ class SessionsController < ApplicationController
   end
 
   def welcome
-    if logged_in
-      redirect_to controller: 'secrets', action: 'show'
-    else
-      redirect_to controller: 'sessions', action: 'new'
+    if !logged_in
+      redirect_to '/login'
     end
   end
 
   private
   def logged_in
-    if !params[:name] || params[:name] == ""
-      return head(:forbidden)
-      redirect_to '/login'
-    else
-    session[:name] = params[:name]
+      if !params[:name] || params[:name] == ""
+        return head(:forbidden)
+        redirect_to '/login'
+      else
+      session[:name] = params[:name]
+    end
   end
-end
 
 end
