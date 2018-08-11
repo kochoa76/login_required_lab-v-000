@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
   def create
     if !params[:name] || params[:name]==""
       redirect_to '/login'
-    else 
+    else
       session[:name] = params[:name]
-    end 
+    end
   end 
   end
 
@@ -19,5 +19,5 @@ class SessionsController < ApplicationController
     else
       redirect_to controller: 'sessions', action: 'new'
     end
-  end 
+  end
 end
