@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root controller: 'sessions', action: 'new'
+  get '/login'=> controller: 'sessions#new'
+  post '/login' => controller: 'sessions#create'
 
 
   # Example of regular route:
