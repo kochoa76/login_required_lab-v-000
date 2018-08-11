@@ -19,6 +19,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+   session.delete :name
+   redirect_to controller: 'sessions', action: 'new'
+ end
+
   private
   def logged_in
       if !params[:name] || params[:name] == ""
