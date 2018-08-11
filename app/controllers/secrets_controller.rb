@@ -2,7 +2,7 @@ class SecretsController < ApplicationController
   before_action :logged_in
 
     def show
-      if !logged_in 
+      if !logged_in
         redirect_to controller: 'sessions', action: 'new'
       end 
 
