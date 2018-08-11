@@ -3,7 +3,7 @@ class SecretsController < ApplicationController
 
     def show
       if !logged_in
-
+      redirect_to controller: 'sessions', action: 'new'
     end
 
 
@@ -12,7 +12,7 @@ class SecretsController < ApplicationController
 
     def logged_in
 
-      if params[:name]== "" || params[:name]==nil 
+      if params[:name]== "" || params[:name]==nil
         redirect_to controller: 'sessions', action: 'new'
     end
   end
