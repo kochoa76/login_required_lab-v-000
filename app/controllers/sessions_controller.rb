@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   private
   def logged_in
       if !params[:name] || params[:name] == ""
-        
+
         redirect_to '/login'
       else
       session[:name] = params[:name]
