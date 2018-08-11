@@ -6,6 +6,7 @@ class SecretsController < ApplicationController
         return head(:forbidden) 
         redirect_to '/login'
       else
+        
 
 
       end
@@ -21,7 +22,6 @@ class SecretsController < ApplicationController
         redirect_to '/login'
       else
       session[:name] = params[:name]
-      redirect_to welcome page
     end
   end
 
