@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/welcome' => 'sessions#welcome'
   get '/show' => 'secrets#show'
+  post '/logout' => 'sessions#destroy'
 
 
   # Example of regular route:
