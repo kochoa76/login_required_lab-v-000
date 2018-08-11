@@ -3,7 +3,9 @@ class SecretsController < ApplicationController
 
     def show
       if !logged_in
-        redirect_to controller: 'sessions', action:'new'
+        redirect_to '/login'
+      else
+
       end
 
     end
