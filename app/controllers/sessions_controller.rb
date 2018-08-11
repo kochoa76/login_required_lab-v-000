@@ -5,13 +5,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if !params[:name] || params[:name]==""
-      redirect_to controller: 'sessions', action: 'new'
-    else
-      session[:name] = params[:name]
-      redirect_to controller: 'sessions', action: 'welcome'
-    end
-  end
+  #       session[:name] = params[:name]
+  #       redirect_to controller: 'sessions', action: 'welcome'
+  #   if !params[:name] || params[:name]==""
+  #     redirect_to controller: 'sessions', action: 'new'
+  #   end
+  # end
+  return redirect_to(controller: 'sessions',
+                       action: 'new') if !params[:name] || params[:name].empty?
+    session[:name] = params[:name]
+    redirect_to controller: 'sessions', action: 'welcome'
 
   def welcome
     if !logged_in
