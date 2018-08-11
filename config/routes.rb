@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'secrets#welcome'
   get '/login'=> 'sessions#new'
   post '/login' => 'sessions#create'
+  get '/show' => 'secrets#show'
 
 
   # Example of regular route:
