@@ -2,7 +2,7 @@ class SecretsController < ApplicationController
   before_action :logged_in
 
     def show
-      redirect_to controller: 'sessions', action: 'new' unless session[:name]
+      unless session[:name] redirect_to controller: 'sessions', action: 'new' 
     end
 
 
