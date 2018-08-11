@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       session[:name] = params[:name]
       redirect_to controller: 'sessions', action: 'welcome'
     end
-  end 
   end
 
   def welcome
