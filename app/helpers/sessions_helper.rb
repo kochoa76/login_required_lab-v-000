@@ -1,5 +1,5 @@
 module SessionsHelper
-  def current_user 
+  def current_user
     session[:name]
   end 
 end
