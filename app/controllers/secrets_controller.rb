@@ -2,7 +2,7 @@ class SecretsController < ApplicationController
   before_action :logged_in
 
     def show
-      raise params.inspect
+      
     end
 
 
@@ -10,7 +10,7 @@ class SecretsController < ApplicationController
     private
 
     def logged_in
-    
+
       if !params[:name] || params[:name].empty?
         redirect_to controller: 'sessions', action: 'new'
       else
