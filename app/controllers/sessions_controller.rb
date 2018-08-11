@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    raise params.inspect
     if !params[:name] || params[:name].empty?
     redirect_to(controller: 'sessions', action: 'new')
     else
