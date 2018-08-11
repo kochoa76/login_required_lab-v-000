@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  private 
+  private
   def logged_in
     if !params[:name] || params[:name] == ""
       return head(:forbidden)
@@ -29,6 +29,6 @@ class SessionsController < ApplicationController
     else
     session[:name] = params[:name]
   end
-  end
-    
+end
+
 end
